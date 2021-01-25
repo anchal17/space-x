@@ -1,6 +1,7 @@
 # SpaceX
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+1. Created a project ng new space-x
 
 ## Development server
 
@@ -8,7 +9,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component home to generate a new component. 
+Run `ng generate service home to generate a service file. 
+
 
 ## Build
 
