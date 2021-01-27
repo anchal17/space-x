@@ -25,7 +25,7 @@ export class HomeService {
   }
 
   launchLandAndYearFilteredData(launchParam, landParam, yearParam):Observable<any>{
-    let url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+launchParam +'&land_success='+landParam +'&lauch_year='+yearParam;
+    let url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+launchParam +'&land_success='+landParam +'&launch_year='+yearParam;
     return this.http.get(url);
   }
 }

@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     if(this.landParam){
       landParam = this.landParam
     }
-    this.homeService.launchLandAndYearFilteredData(lauchParam, landParam, yearParam).subscribe(res=>{
+    this.homeService.launchLandAndYearFilteredData(lauchParam, landParam, yearParam.toString()).subscribe(res=>{
       this.launchData = res;
     })
   }

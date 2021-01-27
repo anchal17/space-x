@@ -76,7 +76,7 @@
                     <div>
                         <label class="content-desc">Successful Landing: </label>
                         <span *ngFor="let launchSuccess of data.rocket.first_stage.cores" class="content-prop">
-                            {{launchSuccess.land_success}}
+                            {{launchSuccess.land_success || 'NA'}} 
                         </span>
                     </div>
                 </div>
