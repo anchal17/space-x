@@ -10,7 +10,7 @@
                         <hr>
                         <div class="main-row">
                             <div *ngFor="let year of lauchYearData; let ind=index" class="w-50" [attr.data-index]="ind">
-                                <div (click)="getLauchLandAnddYearData('', '', year)" class="button">{{year}}</div>
+                                <div (click)="getLauchLandAnddYearData('', '', year, ind)" id="launchYear" [ngClass]="{'enabled' : yearToggle && selectedIndex === ind, 'disabled': !yearToggle}" class="button">{{year}}</div>
                             </div>
                         </div>
                     </div>
@@ -21,10 +21,10 @@
                         <hr>
                         <div class="main-row">
                             <div class="w-50">
-                                <div (click)="getLauchSuccessData(true)" class="button">True</div>
+                                <div (click)="getLauchSuccessData(true)" [ngClass]="{'enabled' : toggle && launchParam, 'disabled': !toggle}" class="button">True</div>
                             </div>
                             <div class="w-50">
-                                <div (click)="getLauchSuccessData(false)" class="button">False</div>
+                                <div (click)="getLauchSuccessData(false)" [ngClass]="{'enabled' : toggle && !launchParam, 'disabled': !toggle}" class="button">False</div>
                             </div>
                         </div>
                     </div>
@@ -35,10 +35,10 @@
                         <hr>
                         <div class="main-row">
                             <div class="w-50">
-                                <div (click)="getLauchAndLandData('', true)" class="button">True</div>
+                                <div (click)="getLauchAndLandData('', true)" [ngClass]="{'enabled' : landToggle && landParam, 'disabled': !landToggle}" class="button">True</div>
                             </div>
                             <div class="w-50">
-                                <div (click)="getLauchAndLandData('', false)" class="button">False</div>
+                                <div (click)="getLauchAndLandData('', false)" [ngClass]="{'enabled' : landToggle && !landParam, 'disabled': !landToggle}" class="button">False</div>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                     <div>
                         <label class="content-desc">Successful Landing: </label>
                         <span *ngFor="let launchSuccess of data.rocket.first_stage.cores" class="content-prop">
-                            {{launchSuccess.land_success || 'NA'}} 
+                            {{launchSuccess.land_success}} 
                         </span>
                     </div>
                 </div>

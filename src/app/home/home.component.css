@@ -98,7 +98,7 @@ h4{
     width: 50%;
 }
 
-.button:hover {
+/* .button:hover {
     background-color: #8bc34a;
     border: none;
     color: black;
@@ -114,14 +114,18 @@ h4{
     margin-right: auto;
     margin-left: auto;
     width: 50%;
-}
+} */
 
-.light-green {
+.disabled {
     background-color: #c5e1a5;
 }
 
-.dark-green {
+.enabled {
 background-color: #8bc34a;
+}
+
+.disable{
+    background-color: #c5e1a5;
 }
 
 .filter{
