@@ -73,11 +73,19 @@
                         <label class="content-desc">Successful Launch:</label><span
                             class="content-prop">{{data.launch_success}}</span>
                     </div>
-                    <div>
+                    <div class="land-disp">
                         <label class="content-desc">Successful Landing: </label>
-                        <span *ngFor="let launchSuccess of data.rocket.first_stage.cores" class="content-prop">
-                            {{launchSuccess.land_success}} 
-                        </span>
+                        <div *ngFor="let launchSuccess of data.rocket.first_stage.cores" class="content-prop">
+                            <div *ngFor="let landSuccess of [launchSuccess]">
+                                <!-- {{landSuccess | json}} -->
+                                <div *ngIf="landSuccess.land_success !=null">
+                                    {{landSuccess.land_success}} 
+                                </div>
+                                <div *ngIf="landSuccess.land_success == null">
+                                    NA
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

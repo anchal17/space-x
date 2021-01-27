@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   disabled = false;
   INITIAL_INDEX = 0;
   selectedIndex = this.INITIAL_INDEX;
+  landSuccessData = [];
   constructor(private homeService:HomeService) { }
 
   ngOnInit(): void {
@@ -26,11 +27,6 @@ export class HomeComponent implements OnInit {
   getSpaceXData(){
     this.homeService.getSpaceData().subscribe(res=>{
       this.launchData = res;
-      console.log("launch data..", this.launchData);
-      for(let i in this.launchData){
-        let land = this.launchData[i].rocket.first_stage.cores;
-        console.log("land..", land);
-      }
       this.lauchYearData = [];
       for(let i in this.launchData){
         if(this.lauchYearData.indexOf(this.launchData[i].launch_year) == -1){
@@ -49,7 +45,7 @@ export class HomeComponent implements OnInit {
       this.homeService.launchSuccessData(lauchParam).subscribe(res=>{
         this.launchData = res;
       })
-    }
+    } 
   }
 
   getLauchAndLandData(lauchParam, landParam){
@@ -62,7 +58,7 @@ export class HomeComponent implements OnInit {
       this.homeService.launchAndLandFilteredData(lauchParam, landParam).subscribe(res=>{
         this.launchData = res;
       })
-    }
+    } 
   }
 
   getLauchLandAnddYearData(lauchParam, landParam, yearParam, ind){
@@ -78,7 +74,7 @@ export class HomeComponent implements OnInit {
       this.homeService.launchLandAndYearFilteredData(lauchParam, landParam, yearParam).subscribe(res=>{
         this.launchData = res;
       })
-    }
+    } 
   }
 
 }
